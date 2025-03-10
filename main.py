@@ -1,8 +1,8 @@
 import uvicorn
 
-from app.routes import app
-from app.database import init_db
-from app.scheduler import init_scheduler
+from routes import app
+from team_submitter.database import init_db
+from team_submitter.scheduler import init_scheduler
 
 # 主函数
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import datetime
 import aiosqlite
 from typing import List, Tuple, Optional
 
-from app.models import Team, TeamMember
+from team_submitter.models import Team, TeamMember
 
 # 数据库路径
 DATABASE_PATH = "teams.db"
