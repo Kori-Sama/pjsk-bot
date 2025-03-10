@@ -13,10 +13,10 @@ scheduler = AsyncIOScheduler()
 
 async def check_team_start_times():
     current_time = datetime.datetime.now()
-    # 向前后5分钟的时间范围
-    start_time = (current_time - datetime.timedelta(minutes=5)
+    # 向前后1分钟的时间范围
+    start_time = (current_time - datetime.timedelta(minutes=1)
                   ).strftime("%Y-%m-%d %H:%M:%S")
-    end_time = (current_time + datetime.timedelta(minutes=5)
+    end_time = (current_time + datetime.timedelta(minutes=1)
                 ).strftime("%Y-%m-%d %H:%M:%S")
 
     # 获取即将开始的队伍
@@ -47,8 +47,7 @@ async def check_team_start_times():
             print(
                 f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 无法发送通知: 缺少群ID信息")
 
-        # 删除已通知的队伍
-        await delete_team_by_id(team['id'])
+
 
 # 初始化调度任务
 
